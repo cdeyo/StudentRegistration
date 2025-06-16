@@ -12,13 +12,17 @@
 
   <nav>
     <ul>
-      <li><a href="registration.php">Register</a></li>
-      <li><a href="login.php">Login</a></li>
       <li><a href="enroll.php">Enroll</a></li>
       <li><a href="my_courses.php">My Courses</a></li>
+
+      <?php if (isset($_SESSION['user'])): ?>
+          <li><a href="logout.php">Logout</a></li>
+      <?php else: ?>
+          <li><a href="registration.php">Register</a></li>
+          <li><a href="login.php">Login</a></li>
+      <?php endif; ?>
     </ul>
   </nav>
-
   <footer>
     <p>&copy; 2025 UAGC Online Course Registration System. All rights reserved.</p>
   </footer>
